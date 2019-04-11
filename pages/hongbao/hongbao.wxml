@@ -1,0 +1,22 @@
+<!--pages/hongbao/hongbao.wxml-->
+<wxs module="utilWxc" src="../../utils/util.wxs"></wxs>
+<view class='hongbao-view' wx:if="{{yxHongbaoList.length > 0}}">
+    <view class='hongbao-view2' wx:for="{{yxHongbaoList}}" wx:key="unique">
+        <view class='hongbao-view3'>
+             <view class='hongbao-view3-view'>
+                <view class='hongbao-view3-view2'>{{item.hongbaoname}}</view>
+                <view class='hongbao-view3-view3'>有效期至{{utilWxc.formatTimeBylength(item.endtime, 0, 10)}}</view>
+             </view>
+             <view>
+                <view class='hongbao-view3-view4'>￥<text>{{item.hongbaoedu}}</text></view>
+                <view class='hongbao-view3-view3'>满{{item.hongbaosyxx}}可用</view>
+		         </view>
+        </view>
+        <view class='hongbao-view4'>{{item.hongbaosysm}}</view>
+    </view>
+    <view class="hongbao-view5"><text>没有更多有效券了</text>|<text bindtap='showOver'>查看无效券>></text></view>
+</view>
+<view class="empty-view" wx:else>
+  <image src='../../images/empty.png' style='width: 180rpx;height: 180rpx;'></image>
+  <text class="empty-text" >您当前没有可用红包哦~</text>
+</view>

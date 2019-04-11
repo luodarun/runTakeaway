@@ -1,0 +1,67 @@
+<!--pages/seller/seller.wxml-->
+<view class='seller-detail-view'>
+  <image src='../../images/lunbo3.jpg' class='seller-detail-view-image'></image>
+  <view class='seller-detail-detail'>
+    <view style='display: flex;align-items: center;line-height: 30rpx;'>
+      <image style='width: 30rpx;height: 30rpx;margin-right: 10rpx;' src='../../images/time.png'></image>
+      <view style='font-size: 30rpx;color: #fff;'>配送约55分钟</view>
+      <view style='font-size: 24rpx;margin: 0 10rpx;color: #fff;'>| </view>
+      <image style='width: 30rpx;height: 30rpx;margin-right: 10rpx;' src='../../images/good.png'></image>
+      <view style='font-size: 30rpx;color: #fff;'>点评高分店铺</view>
+    </view>
+    <view style='font-size: 30rpx;color: #fff;line-height: 30rpx;'>公告：欢迎光临，很高兴为您服务~</view>
+    <view class='flex-start seller-detail-view-price-reduce'>
+      <view>40减16</view>
+      <view>40减16</view>
+      <view>40减16</view>
+      <view>40减16</view>
+    </view>
+  </view>
+</view>
+<view class='seller-detail-menu'>
+  <view class="seller-detail-menu-tab">
+    <view style="border-bottom: {{chooseLabel === '菜单' ? '1px solid #dad73f' : ''}}" bindtap='choose' data-name="菜单">菜单</view>
+    <view style="border-bottom: {{chooseLabel === '评价' ? '1px solid #dad73f' : ''}}" bindtap='choose' data-name="评价">评价</view>
+    <view style="border-bottom: {{chooseLabel === '商家' ? '1px solid #dad73f' : ''}}" bindtap='choose' data-name="商家">商家</view>
+  </view>
+  <view style='width: 150rpx;display: flex;align-items: center;'>
+    <view class="seller-detail-search-view">
+      <image src="../../images/search.png" class="heard-search-icon" /> 搜索
+    </view>
+  </view>
+</view>
+<view>
+  <view style="width: 25%;float: left;background: #eeeeec;">
+    <scroll-view scroll-y="true" style="height: {{(screenHeight - 151) + 'px'}};">
+      <view wx:for="{{secondMenu}}" wx:key="{{index}}" class="second-menu-ul" data-name="{{item.menuName}}" data-index="{{index}}" bindtap='choose2' style="background: {{chooseLabel2 === item.menuName ? '#fff' : ''}}">
+        <image style='width: 30rpx;height: 30rpx;margin-right: 10rpx;' wx:if="{{item.menuImage}}" src='{{item.menuImage}}'></image>
+        {{item.menuName}}
+      </view>
+    </scroll-view>
+  </view>
+  <view style='float: right;width: calc(75% - 20rpx);padding-left: 20rpx;'>
+    <scroll-view scroll-y="true" style="height: {{(screenHeight - 151) + 'px'}};"  scroll-into-view="{{toView}}" bindscroll="scrollGoods">
+      <view wx:for="{{secondMenu}}" wx:key="{{index}}" id="{{'secondMenuDetail' + index}}">
+        <view style='font-size: 34rpx;height: 100rpx;display: flex; align-items: center;' data-name="{{item.menuName}}">{{item.menuName}}<text style='color: #999797;'>{{item.menuDesc ? "(" + item.menuDesc + ")" : ""}}</text></view>
+        <view class='seller-detail-view2' style='background: #fff;' wx:for="{{item.goods}}" wx:for-index="idx" wx:for-item="itemName" wx:key="{{idx}}">
+          <image src='../../images/lunbo3.jpg' class='seller-detail-view-image2'></image>
+          <view class='seller-detail-detail2'>
+            <view style='font-size: 40rpx;line-height: 40rpx;'>{{itemName.goodsName}}</view>
+            <view wx:if="{{itemName.goodsDesc}}" class="goods-desc">{{itemName.goodsDesc}}</view>
+            <view style='display: flex;align-items: center;line-height: 24rpx;font-size: 24rpx;color: #a8a4a4;'>
+              <view style='margin-right: 20rpx;'>月售{{itemName.sellNum}}</view>
+              <view style='margin-right: 30rpx;'>赞{{itemName.praiseNum}}</view>
+              <view wx:if="{{itemName.isRecommend}}">万能网友推荐</view>
+            </view>
+            <view wx:if="{{itemName.goodsDiscount > 0 && itemName.goodsDiscount < 10}}" style='color: red;font-size: 40rpx;margin-left: -10rpx;display: flex;align-items: center;'>￥{{itemName.goodsPrice * ((itemName.goodsDiscount > 0 && itemName.goodsDiscount < 10) ? (itemName.goodsDiscount / 10) : 1)}}<view style='font-size: 26rpx;text-decoration:line-through;color: #c5c5c5;margin-left: 10rpx;'>￥{{itemName.goodsPrice}}</view></view>
+            <view wx:if="{{itemName.goodsDiscount > 0 && itemName.goodsDiscount < 10}}" style='color: red;font-size: 26rpx;display: flex;align-items: center;'>
+              <image src='../../images/discount2.png' style='width: 26rpx;height: 26rpx;margin-right: 10rpx;'></image>
+              {{itemName.goodsDiscount}}折 限{{itemName.discountNum}}份
+            </view>
+            <view wx:if="{{itemName.goodsDiscount === 0 || itemName.goodsDiscount > 10}}" style='color: red;font-size: 40rpx;margin-left: -10rpx;display: flex;align-items: center;'>￥{{itemName.goodsPrice}}</view>
+          </view>
+        </view>
+      </view>
+    </scroll-view>
+  </view>
+</view>

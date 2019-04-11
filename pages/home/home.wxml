@@ -1,0 +1,146 @@
+<!--pages/home/home.wxml-->
+<wxs module="utilWxc" src="../../utils/util.wxs"></wxs>
+<view class="mask"
+hidden="{{mask1Hidden}}" bindtap="mask1Cancel">
+  <view class="overall-sort-list">
+    <block wx:for="{{sortList}}" wx:key="{{index}}">
+    <view class="overall-sort" style="color: {{selectedSortListIndex === index ? '#E0B72B' : '#393939'}}" data-index="{{index}}" 
+    bindtap="sortSelected">{{item}}</view>
+    </block> 
+  </view>
+</view>
+<view class="mask"
+hidden="{{mask2Hidden}}" bindtap="mask2Cancel">
+  <scroll-view catchtap scroll-y="true" style='height: 600rpx;'>
+    <view class="overall-sort-list" style='padding: 30rpx 5rpx 0 5rpx;'>
+      <block wx:for="{{filterArray}}" wx:key="{{index}}" style="margin-top: 20rpx;">
+        <view style='font-size: 32rpx;margin: 20rpx 0 20rpx 30rpx;'>{{item.typesName}}{{item.isMutAble === '1' ? '(可多选)' : ''}}</view>
+        <view class='mask2-view'>
+          <view wx:for="{{item.types}}" class="{{utilWxc.customIncludes(selectedFilters, itemName.typeName) > -1 ? 'mask2-view-view-selected' : ''}}" wx:for-index="idx" data-index1="{{index}}" data-index2="{{idx}}" data-name="{{itemName}}" wx:for-item="itemName" bindtap='selectFilter' wx:key="{{idx}}">
+            <image style='width: 30rpx;height: 30rpx;' wx:if="{{itemName.typeImage}}" src="{{itemName.typeImage}}"></image>
+            <text>{{itemName.typeName}}</text>
+          </view>
+        </view>
+      </block> 
+    </view>
+  </scroll-view>
+  <view catchtap class="home-mask2-button-bottom">
+    <view bindtap='clearFilters'>清空</view>
+    <view bindtap='comfirmFilters' style='background: #f0bf54;'>完成<view wx:if="{{selectedFilters.length > 0}}" style='background: black;color: #fff;width: 34rpx;height: 34rpx;border-radius: 17rpx;font-size: 20rpx;margin-left: 20rpx;'>{{selectedFilters.length}}</view></view>
+  </view>
+</view>
+<scroll-view class='home-view' scroll-y="true" style="height: {{screenHeight + 'px'}}"  bindscroll="scrollTopFun" bindscrolltolower="scrollBottom" scroll-into-view="{{toView}}">
+  <view class='location-view'>
+    <image class="location-image"  src="../../images/localtion1.png"></image>
+    <text bindtap='toLocation' class="location-text">{{local_text}}</text>
+  </view>
+  <view class="{{top>45 ? 'heard-search' : ''}}">
+    <view class="search-view">
+      <image src="../../images/search.png" class="heard-search-icon"/>
+      你想吃啥
+    </view>
+  </view>
+  <swiper indicator-dots circular class="home-swiper">
+        <block wx:for="{{allGroupsTypes}}" wx:key="{{index}}">
+          <swiper-item>
+            <view class="swiper-view-parent">
+                <view class="swiper-view" wx:for="{{item}}" wx:key="{{index2}}"  wx:for-index="index2" wx:for-item="item2">
+                <image src="{{item2.imageSrc}}"></image>
+                <text>{{item2.functionName}}</text>
+                </view>
+            </view>
+          </swiper-item>
+        </block>
+  </swiper>
+  <swiper indicator-dots circular class="home-swiper2">
+        <block wx:for="{{guangGaoList}}" wx:key="{{index}}">
+          <swiper-item class="home-swiper">
+            <image class="home-image" src="{{item.imageSrc}}"></image>
+          </swiper-item>
+        </block>
+  </swiper>
+  <view class='home-card'>
+    <view class='home-card-view'>
+      <image src='../../images/lunbo2.jpg' class='home-card-image'></image>
+      <view class='home-card-view-view1'>真的好吃</view>
+      <view class='home-card-view-view2'>
+        <image style='width: 100rpx;height: 100rpx;' src='../../images/shangbiao.jpg'></image>
+      </view>
+      <view class='home-card-view-view3'>
+        <view style='width: 100%;text-align:left;color: #fff;'>酱骨头(霍营店）</view>
+        <view class='home-card-view-view3-view'>
+          <view style='margin-left: 0;'>20减19</view>
+          <view>45减24</view>
+          <view>55减30</view>
+          <view>100减50</view>
+        </view>
+      </view>
+    </view>
+    <view style='height: 300rpx;padding: 20rpx 20rpx 0 20rpx;'>
+      <view style='width: 100%;text-align:left;font-size: 50rpx;margin: 15rpx 0;'>精品套餐4折起</view>
+        <view class='home-card-view-view3-view2'>
+          <view style='margin-left: 0;'>
+            <image src='../../images/cai1.jpg'>
+              <text class="home-cover-text">洗剪吹</text>
+            </image>
+            <text class="home-bottom-text">￥22.8<text>￥58</text></text>
+          </view>
+          <view>
+            <image src='../../images/cai2.jpg'>
+                <text class="home-cover-text">龙傲天</text>
+            </image>
+            <text class="home-bottom-text">￥6<text>￥20</text></text>
+          </view>
+          <view>
+            <image src='../../images/cai3.jpg'>
+              <text class="home-cover-text">杀马特</text>
+            </image>
+            <text class="home-bottom-text">￥36.8<text>￥98</text></text>
+          </view>
+        </view>
+    </view>
+  </view>
+  <view class='home-view-localSeller'>附近商家</view>
+  <view class="{{top > 670 ? 'view-filter2' : 'view-filter'}}" id="shaixuan">
+    <view bindtap="selectLabel" class="{{mask1Hidden === true ? 'zonghe-filter' : 'zonghe-filter2'}} {{selectLable === 0 ? 'selected-label' : 'no-select-label'}}">{{select_text}}</view>
+    <view bindtap="selectLabel" class="{{ selectLable === 1 ? 'selected-label' : 'no-select-label'}}">销量高</view>
+    <view bindtap="selectLabel" class="{{ selectLable === 2 ? 'selected-label' : 'no-select-label'}}">速度快</view>
+    <view bindtap="selectLabel" class="{{ utilWxc.customIncludes(selectedFilters, '减配送费') > -1 ? 'selected-label' : 'no-select-label'}}">减配送费</view>
+    <view bindtap="selectLabel" style="display: flex; align-items: center;" class="{{selectedFilters.length > 0 ? 'selected-label' : 'no-select-label'}}">筛选
+      <image wx:if="{{selectedFilters.length === 0}}" src='../../images/screen.png' style='width: 24rpx;height: 24rpx;'></image>
+      <view wx:if="{{selectedFilters.length > 0}}" style='background: black;color: #fff;width: 34rpx;height: 34rpx;border-radius: 17rpx;font-size: 20rpx;display: flex; justify-content: center; margin-left: 20rpx;'>{{selectedFilters.length}}</view></view>
+  </view>
+  <view wx:for="{{sellerArray}}" wx:key="{{index}}" class='seller-view' data-index="{{index}}" bindtap='goSeller'>
+    <image src='../../images/lunbo3.jpg' class='seller-view-image'></image>
+    <view class='seller-detail'>
+      <view style='font-size: 36rpx;line-height: 36rpx;'>鸿毛饺子（西直门店）</view>
+      <view style='display: flex;position: relative;align-items: center;margin: 5rpx 0;'>
+        <stars nums="{{nums}}" size="{{size}}"></stars>
+        <text style='font-size: 30rpx;margin-left: 20rpx;'>月售666</text>
+          <view style='position: absolute;font-size: 30rpx;right: 0;color: #d5d5d5;display: flex; align-items: center;'>1.2km 
+            <view style='font-size: 24rpx;margin: 0 5rpx;'>| </view>
+            <view style='color: #000;'>30分钟</view>
+          </view>
+      </view>
+      <view class='flex-between' style='margin: 5rpx 0;'>
+        <view class='flex-between seller-view-price'>
+          <view>起送￥6</view>
+          <view class='dividing-line'>|</view>
+          <view>配送￥7</view>
+          <view class='dividing-line'>|</view>
+          <view>人均￥8</view>
+        </view>
+        <view class="runTake-lable">美团专送</view>
+      </view>
+      <view class='seller-view-label-view'>
+        <view class='seller-view-label'>大众点评高分店铺</view>
+      </view>
+      <view class='flex-start seller-view-price-reduce'>
+        <view>40减16</view>
+        <view>40减16</view>
+        <view>40减16</view>
+        <view>40减16</view>
+      </view>
+    </view>
+  </view>
+</scroll-view>

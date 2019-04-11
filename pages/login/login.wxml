@@ -1,0 +1,13 @@
+<!--pages/login/login.wxml-->
+<view class="container">
+  <view class="permission-view">
+    <block>
+      <image bindtap="bindViewTap" class="permission-image" src="../../images/logo.png" mode="cover"></image>
+      <!-- <text class="permission-text">无名外卖</text> -->
+    </block>
+  </view>
+  <view class="permission-view2">
+    <button class="permission-button" type='primary' open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber"> 微信登录 </button>
+    <text class="permission-text2" bindtap="toPhoneLogin">手机号登录/注册</text>
+  </view>
+</view>

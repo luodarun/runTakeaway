@@ -1,0 +1,12 @@
+<!--pages/phoneLogin/phoneLogin.wxml-->
+<view style='margin: 20rpx 50rpx;'>
+<view class='phoneLogin-view'>
+        <input maxlength="11" bindinput="judgePhone" placeholder="请输入手机号" class='phoneLogin-input'/>
+        <text bindtap="sendCode" style='width: 30%;text-align:center;' class="{{isPhone ? 'phoneLogin-text' : ''}}">{{sendText}}</text>
+</view>
+<view class='phoneLogin-view'>
+       <input maxlength="6" bindinput="getCode" placeholder="请输入短信验证码"/>
+</view>
+<button type="default" bindtap="login" loading="{{loading}}" class="phoneLogin-button">登录</button>
+</view>
+        

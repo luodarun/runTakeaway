@@ -1,0 +1,102 @@
+/* pages/seller/seller.wxss */
+@import "../home/home.wxss";
+.seller-detail-view {
+ background: #333333; 
+ position: relative;
+ padding: 30rpx 20rpx 30rpx 190rpx;
+}
+.seller-detail-view2 {
+ background: #333333; 
+ position: relative;
+ padding: 0 20rpx 30rpx 170rpx;
+}
+.seller-detail-view-image {
+  width: 150rpx;
+  height: 140rpx;
+  position: absolute;
+  left: 20rpx;
+  top: 30rpx;
+}
+.seller-detail-view-image2 {
+  width: 150rpx;
+  height: 140rpx;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+.seller-detail-detail {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 140rpx;
+  position: relative;
+}
+.seller-detail-detail2 {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  position: relative;
+}
+.seller-detail-view-price-reduce view{
+  font-size: 26rpx;
+  background: red;
+  color: #fff;
+  margin-right: 10rpx;
+}
+.seller-detail-view-price-reduce::after {
+  content: " ";
+  display: inline-block;
+  height: 6px;
+  width: 6px;
+  border-width: 2px 2px 0 0;
+  border-color: #e7e6e6;
+  border-style: solid;
+  transform: matrix(.71,.71,-.71,.71,0,0);
+  position: absolute;
+  bottom: 0;
+  margin-bottom: 5px;
+  right: 0;
+}
+.seller-detail-menu {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid #e0e0de;
+  height: 100rpx;
+}
+.seller-detail-menu-tab {
+  display: flex;
+  height: 100%;
+}
+.seller-detail-menu-tab view {
+  margin: 0 30rpx;
+  padding: 20rpx 0;
+}
+.seller-detail-search-view {
+  font-size: 28rpx;
+  color: #a8a4a4;
+  padding: 5rpx 15rpx;
+  margin: 10rpx 0;
+  height: 60rpx;
+  background: #d9ebe7;
+  border-radius:30rpx;
+  line-height: 60rpx;
+  display: flex;
+  align-items: center;
+}
+.second-menu-ul {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20rpx 0;
+  font-size: 30rpx;
+  color: #575555;
+}
+.goods-desc {
+  text-overflow: ellipsis;
+  overflow:hidden;
+  white-space:nowrap;
+  font-size: 28rpx;
+  line-height: 28rpx;
+  margin: 10rpx 0;
+  color: #a8a4a4;
+}

@@ -1,0 +1,12 @@
+/* components/stars/stars.wxss */
+.inner {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.inner-image {
+
+}
+.inner-text {
+  
+}

@@ -1,0 +1,5 @@
+<!-- 这是自定义组件的内部WXML结构 -->
+<view class="inner">
+  <image style="width: {{imageSize}}px;height: {{imageSize}}px;" wx:for="{{starArray}}" src="{{item}}" wx:key="{{index}}" class="inner-image"></image><text class='inner-text' style="font-size: {{imageSize}}px">{{starNum}}</text>
+</view>
+<slot></slot>

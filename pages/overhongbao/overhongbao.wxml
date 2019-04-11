@@ -1,0 +1,18 @@
+<!--pages/overhongbao/overhongbao.wxml-->
+<view class='hongbao-view overStyle'>
+    <view class='hongbao-view2'>
+        <view class='hongbao-view3 borderBottom'>
+             <view class='hongbao-view3-view'>
+                <view class='hongbao-view3-view2'>跑腿代购新客红包</view>
+                <view class='hongbao-view3-view3'>有效期至2018.12.17</view>
+             </view>
+             <view>
+                <view class='hongbao-view3-view4'>￥<text>6</text></view>
+                <view class='hongbao-view3-view3'>满6可用</view>
+		         </view>
+        </view>
+        <view class='hongbao-view4'>限跑腿订单，新用户（手机号、设备、账号均未下过跑腿订单）使用</view>
+        <image class='overhongbao-image' src='../../images/overhongbao.png'></image>
+    </view>
+</view>
+

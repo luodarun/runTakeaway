@@ -1,0 +1,50 @@
+<!--pages/user/user.wxml-->
+<view class='user-view'>
+<image class="user-image" src="{{userImageSrc}}"></image>
+ <text bindtap='toSignIn' wx:if="{{!encryptPhoneNum}}" class="user-text">登录/注册</text>
+  <view wx:else>
+    <text style='display:block;'>{{nickName}}</text>
+    <text>{{encryptPhoneNum}}</text>
+  </view>
+</view>
+<view class='user-view2' style='margin-top: 20rpx;'>
+<image class="user-image2"  src="../../images/hongbao.png"></image>
+ <text bindtap='toHongbao' class="user-text">美团红包<text style='color: red;' wx:if="{{hongbaoAmount > 0}}">{{hongbaoAmount}}</text>{{hongbaoAmount > 0 ? "张" : ""}}</text>
+ <view class='user-view3'></view>
+</view>
+<view class='user-view2'>
+<image class="user-image2"  src="../../images/daijinquan.png"></image>
+ <text bindtap='toLocation' class="user-text">商家代金券</text>
+ <view class='user-view3'></view>
+</view>
+<view class='user-view2'>
+<image class="user-image2"  src="../../images/dizhi.png"></image>
+ <text bindtap='toLocation' class="user-text">我的地址</text>
+ <view class='user-view3'></view>
+</view>
+<view class='user-view2'>
+<image class="user-image2"  src="../../images/jl.png"></image>
+ <text bindtap='toLocation' class="user-text">邀请有奖</text>
+ <view class='user-view3'></view>
+</view>
+<view class='user-view2'>
+<image class="user-image2"  src="../../images/kf.png"></image>
+ <text bindtap='toLocation' class="user-text">客服中心</text>
+ <view class='user-view3'></view>
+</view>
+<view class='user-view2'>
+<image class="user-image2"  src="../../images/bzhfk.png"></image>
+ <text bindtap='toLocation' class="user-text">帮助和反馈</text>
+ <view class='user-view3'></view>
+</view>
+<view class='user-view2'>
+<image class="user-image2"  src="../../images/xyhsm.png"></image>
+ <text bindtap='toLocation' class="user-text">协议和说明</text>
+ <view class='user-view3'></view>
+</view>
+<view class='user-view2'>
+<image class="user-image2"  src="../../images/xgsjh.png"></image>
+ <text bindtap='toLocation' class="user-text">修改手机号</text>
+ <view class='user-view3'>{{encryptPhoneNum}}</view>
+</view>
+<view class="user-button">退出账号</view>

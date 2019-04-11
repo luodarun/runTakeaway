@@ -1,0 +1,35 @@
+<!--pages/addLocation/addLocation.wxml-->
+<view style='padding-left: 20rpx;'>
+  <view class="form-properties">
+    <text class='form-properties-lable'>联系人：</text>
+    <input placeholder-style="font-size: 32rpx;" placeholder='请填写收货人的姓名' class="form-properties-input"></input>
+  </view>
+  <view class="form-properties">
+      <radio-group class="group" style="margin-left: 220rpx;">
+        <view class="attr_value">
+           <radio value="1" checked></radio>
+           <label class='radio_label'>先生</label>
+        </view>
+        <view class="attr_value">
+           <radio value="0"></radio>
+           <label class='radio_label'>女士</label>
+        </view>
+      </radio-group>
+  </view>
+  <view class="form-properties">
+    <text class='form-properties-lable'>手机号：</text>
+    <input placeholder-style="font-size: 32rpx;" placeholder='请填写收货人手机号码' class="form-properties-input"></input>
+  </view>
+  <view class="form-properties for-link" bindtap='toLocation'>
+    <text class='form-properties-lable'>收货地址：</text>
+    <view style='display: flex; align-items: center;'>
+      <image src='../../images/location3.png' style='width: 30rpx;height: 30rpx;'></image>
+      <text style='font-size: 32rpx;color: #979797;'>点击选择</text>
+    </view>
+  </view>
+  <view class="form-properties">
+    <text class='form-properties-lable'>门牌号：</text>
+    <input placeholder-style="font-size: 32rpx;" placeholder='详细地址, 例：16号楼5层301室' class="form-properties-input"></input>
+  </view>
+</view>
+<button type="primary" loading="{{loading}}" class='addLocation-button' bindtap="keepAddress">保存地址</button>

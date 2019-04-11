@@ -1,0 +1,17 @@
+/* pages/phoneLogin/phoneLogin.wxss */
+.phoneLogin-view {
+  display: flex;
+  align-items: center;
+  height: 40px;
+  padding-top: 20px;
+  border-bottom: 1px solid #a5a5a5;
+}
+.phoneLogin-input {
+  width: 70%;
+}
+.phoneLogin-text {
+ color: hsl(64, 52%, 48%);
+}
+.phoneLogin-button {
+  margin-top: 40rpx;
+}

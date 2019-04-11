@@ -1,0 +1,16 @@
+/* pages/overhongbao/overhongbao.wxss */
+@import "../hongbao/hongbao.wxss";
+view{
+  color: #e4dede !important;
+}
+.overhongbao-image{
+  position:absolute;
+  top:15rpx;
+  right:-10rpx;
+  height:50rpx;
+  width:100rpx;
+  transform:rotate(45deg);
+}
+.borderBottom {
+  border-bottom: 1px dotted #e4dede !important;
+}

@@ -1,0 +1,16 @@
+var utilWxc = {
+  formatTimeBylength: function (val, start, length) {
+    return val.substring(start, length);
+  },
+  customIncludes: function (val1, val2) {
+    var result =  -1;
+    if (val1.length > 0) {
+      result = val1.indexOf(val2);
+    }
+    return result;
+  }
+}
+module.exports = {
+  formatTimeBylength: utilWxc.formatTimeBylength,
+  customIncludes: utilWxc.customIncludes
+}

@@ -1,0 +1,113 @@
+/* pages/location/location.wxss */
+@import "../home/home.wxss";
+.choose-location {
+  display: flex;
+  align-items: center;
+  margin: 20rpx 0;
+  padding: 0 30rpx;
+}
+.choose-location-icon {
+  width: 30rpx;
+  height: 30rpx;
+}
+.choose-location-view {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+.choose-location-view::after {
+    content: " ";
+    display: inline-block;
+    height: 6rpx;
+    width: 6rpx;
+    border-width: 2rpx 2rpx 0 0;
+    border-color: black;
+    border-style: solid;
+    transform: rotate(135deg);
+    position: absolute;
+    top: 50%;
+    margin-top: -6rpx;
+    right: -16rpx;
+}
+.choose-location-province {
+  font-size: 30rpx;
+}
+view.search {
+    display: flex;
+    flex-direction: row;
+    height: 80rpx;
+    background: #efeff4;
+    align-items: center;
+    border-radius: 10rpx;
+    flex: 1;
+    margin-left: 40rpx;
+}
+
+view.searchItem {
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    border-radius: 10rpx;
+    margin-right: 20rpx;
+    margin-left: 20rpx;
+}
+
+view.searchItem image {
+    height: 30rpx;
+    width: 30rpx;
+    align-self: center;
+    margin-left: 10rpx;
+    margin-right: 20rpx;
+}
+
+view.searchItem input {
+    flex: 1;
+    font-size: 30rpx;
+}
+.choose-location2 {
+  height: 100rpx;
+  padding: 0 30rpx;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #efeff4;
+  border-top: 1px solid #efeff4;
+}
+.choose-location2-image {
+  width: 50rpx;
+  height: 50rpx;
+}
+.choose-location3-icon {
+  width: 50rpx;
+  height: 50rpx;
+  margin-right: 10rpx;
+}
+.choose-location3-view1 {
+  margin: 0 0 0 60rpx;
+  padding: 30rpx 0;
+}
+.choose-location3-view1 view{
+  font-size: 40rpx;
+  line-height: 40rpx;
+}
+.choose-location3-view1 text{
+  font-size: 26rpx;
+  line-height: 26rpx;
+  color: #bfbfbf;
+}
+.location-fixed-bottom {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  display: flex;
+  height: 100rpx;
+  align-items: center;
+  justify-content: center;
+  background: #fff;
+  border-top: 1px solid #efeff4;
+}
+.location-fixed-bottom image {
+  width: 50rpx;
+  height: 50rpx;
+  margin-right: 30rpx;
+}

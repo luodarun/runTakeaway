@@ -1,0 +1,50 @@
+<!--pages/location/location.wxml-->
+<scroll-view class='home-view' style='padding: 0;'>
+  <view class='choose-location'>
+    <view class='choose-location-view'>
+      <image class="choose-location-icon"  src="../../images/location2.png"></image>
+      <text bindtap='toLocation' class="choose-location-province">{{location_province}}</text>
+    </view>
+    <view class='search'>
+        <view class='searchItem'>
+            <image src='../../images/search.png' />
+            <input placeholder='请输入收货地址'></input>
+        </view>
+    </view>
+  </view>
+  <view class='choose-location2'>
+    <view class='choose-location2-view1'>五栋大楼</view>
+    <view style='display: flex;align-items: center;'>
+      <image class='choose-location2-image' src='../../images/target.png'></image>
+      <text style='color: #f4ea2a;'>重新定位</text>
+    </view>
+  </view>
+  <view style='padding: 0 30rpx;border-bottom: 1px solid #efeff4;' wx:if="{{title !== 'back'}}">
+    <view style='display: flex;align-items: center;margin: 30rpx 0 10rpx 0;'>
+      <image class="choose-location3-icon"  src="../../images/userLocation.png"></image>
+      <text style='color: #bfbfbf;font-size: 34rpx;'>我的收货地址</text>
+    </view>
+    <view wx:for="{{userAddress}}" wx:key="{{index}}" class="choose-location3-view1" style="border-bottom: {{index !== userAddress.length - 1 ? '1px solid #efeff4' : 'none' }}">
+      <view>{{item.address}}</view>
+      <text>{{item.name}}</text>
+      <text style='margin: 0 60rpx 0 10rpx;'>{{item.gender === '1' ? '先生' : '女士'}}</text>
+      <text>{{item.phone}}</text>
+    </view>
+  </view>
+   <view style='padding: 0 30rpx;'>
+    <view style='display: flex;align-items: center;margin: 30rpx 0 10rpx 0;'>
+      <image class="choose-location3-icon"  src="../../images/location3.png"></image>
+      <text style='color: #bfbfbf;font-size: 34rpx;'>附近地址</text>
+    </view>
+    <view wx:for="{{location_address}}" wx:key="{{index}}" class="choose-location3-view1" style="border-bottom: {{index !== location_address.length - 1 ? '1px solid #efeff4' : 'none' }}">
+      <view>{{item.title}}</view>
+    </view>
+  </view>
+</scroll-view>
+<view class='location-fixed-bottom' bindtap='addLocation' wx:if="{{title !== 'back'}}">
+  <image src='../../images/add_address.png'></image>
+  <text>新增收货地址</text>
+</view>
+ 
+
+

@@ -1,0 +1,14 @@
+<!--pages/permission/permission.wxml-->
+<view class="container">
+  <view class="permission-view">
+    <block>
+      <image bindtap="bindViewTap" class="permission-image" src="../../images/logo.png" mode="cover"></image>
+      <!-- <text class="permission-text">无名外卖</text> -->
+    </block>
+  </view>
+  <view class="permission-view2">
+    <text class="permission-text2">请完成微信授权以继续使用</text>
+    <button class="permission-button" type='primary' open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 微信授权用户信息 </button>
+  </view>
+</view>
+

@@ -1,0 +1,95 @@
+/* pages/hongbao/hongbao.wxss */
+page{
+  background-color: #f8f6f6;
+}
+.hongbao-view {
+  padding: 20rpx 30rpx;
+}
+.hongbao-view2 {
+  background: #fff;
+  height: 200rpx;
+  position: relative;
+  padding: 30rpx 40rpx 10rpx 40rpx;
+  display: flex;
+  margin-top: 30rpx;
+  flex-direction: column;
+}
+.hongbao-view2::after {
+ content: "";
+ background: #f8f6f6;
+ position: absolute;
+ height: 40rpx;
+ width: 40rpx;
+ border-radius: 20rpx;
+ top: 50%;
+ right: -20rpx;
+ margin-top: -20rpx; 
+}
+.hongbao-view2::before {
+ content: "";
+ background: #f8f6f6;
+ position: absolute;
+ height: 40rpx;
+ width: 40rpx;
+ border-radius: 20rpx;
+ top: 50%;
+ left: -20rpx;
+ margin-top: -20rpx; 
+}
+.hongbao-view3 {
+  flex: 1;
+  border-bottom: 1px dotted #6b6969;
+  display: flex;
+}
+.hongbao-view3-view {
+  flex: 1;
+}
+.hongbao-view3-view2 {
+  font-size: 30rpx;
+  color: #eb1a1a;
+}
+.hongbao-view3-view3 {
+ font-size: 22rpx;
+ color: #201f1f;
+}
+.hongbao-view3-view4 {
+ font-size: 30rpx;
+ color: #eb1a1a;
+ position: relative;
+}
+.hongbao-view3-view4 text {
+  font-size: 45rpx;
+  top: -10rpx;
+  position: absolute;
+}
+.hongbao-view4 {
+ font-size: 22rpx;
+ color: #6b6969;
+ height: 30rpx;
+ line-height: 30rpx;
+ word-break: normal;
+ overflow: hidden;
+ text-overflow:ellipsis;
+ white-space: nowrap;
+ margin-top: 10rpx;
+}
+.hongbao-view5 {
+  text-align: center;
+  font-size: 24rpx;
+  color: #000;
+  margin-top: 20rpx;
+}
+.empty-view {
+  background: #fff;
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  display:flex;
+  flex-direction:column;
+  align-items:center;/*垂直居中*/
+  justify-content: center;/*水平居中*/
+}
+.empty-text {
+  font-size: 20rpx;
+  color: #6b6969;
+}
